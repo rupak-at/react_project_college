@@ -324,3 +324,31 @@ body {
   padding-top: 0.75rem;
   margin-bottom: 1rem;
 }
+
+@media (min-width: 768px) {
+  .cart-page {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    padding: 1rem 0.75rem 2.5rem;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+  }
+
+  .filter-select {
+    width: 100%;
+  }
+
+  .cart-item {
+    flex-wrap: wrap;
+  }
+
+  .cart-item-total {
+    margin-left: auto;
+  }
+}
