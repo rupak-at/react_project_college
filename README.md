@@ -14,6 +14,7 @@ conditional/list rendering.
 - Add items to cart with automatic quantity merging
 - Update quantities (+, −) and remove items from the cart
 - Running cart total and live item-count badge in the navbar
+- Toast notifications for add-to-cart, remove, and order confirmation
 - Checkout confirmation screen (no real payments)
 - Cart persistence with `localStorage` so the cart survives page refreshes
 - Responsive layout for desktop and mobile
@@ -25,6 +26,7 @@ conditional/list rendering.
 - Vite (build tool and dev server)
 - React Router DOM (Catalog `/` and Cart `/cart` views)
 - Tailwind CSS (utility-first styling)
+- React Hot Toast (toast notifications)
 
 ## Setup Instructions
 
