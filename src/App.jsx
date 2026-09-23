@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
 import Navbar from './components/Navbar'
 import useCart from './hooks/useCart'
 import CatalogPage from './pages/CatalogPage'
@@ -26,6 +27,7 @@ function App() {
           />
         </Routes>
       </main>
+      <Toaster position="top-center" toastOptions={{ duration: 2500 }} />
     </BrowserRouter>
   )
 }

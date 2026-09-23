@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { toast } from 'react-hot-toast'
 import products from '../data/products'
 import FilterBar from '../components/FilterBar'
 import ProductGrid from '../components/ProductGrid'
@@ -47,7 +48,13 @@ function CatalogPage({ onAdd }) {
         onSortChange={(e) => setSort(e.target.value)}
       />
       {filteredProducts.length > 0 ? (
-        <ProductGrid products={filteredProducts} onAdd={onAdd} />
+        <ProductGrid
+          products={filteredProducts}
+          onAdd={(product) => {
+            onAdd(product)
+            toast.success(`${product.name} added to cart`)
+          }}
+        />
       ) : (
         <EmptyState
           emoji="🔍"

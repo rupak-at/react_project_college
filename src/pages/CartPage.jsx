@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-hot-toast'
 import products from '../data/products'
 import CartItem from '../components/CartItem'
 import CartSummary from '../components/CartSummary'
@@ -22,9 +23,15 @@ function CartPage({ cart, changeQuantity, removeFromCart, clearCart }) {
   const count = cartItems.reduce((sum, item) => sum + item.quantity, 0)
   const total = cartItems.reduce((sum, item) => sum + item.product.price * item.quantity, 0)
 
+  const handleRemove = (id, name) => {
+    removeFromCart(id)
+    toast(`${name} removed from cart`)
+  }
+
   const handleCheckout = () => {
     setOrderPlaced(true)
     clearCart()
+    toast.success('Order placed! Thanks for shopping 🎉')
   }
 
   if (orderPlaced) {
@@ -68,7 +75,7 @@ function CartPage({ cart, changeQuantity, removeFromCart, clearCart }) {
               item={item}
               product={item.product}
               onChangeQty={changeQuantity}
-              onRemove={removeFromCart}
+              onRemove={(id) => handleRemove(id, item.product.name)}
             />
           ))}
         </ul>
