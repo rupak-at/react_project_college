@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import './App.css'
 import Navbar from './components/Navbar'
 import useCart from './hooks/useCart'
 import CatalogPage from './pages/CatalogPage'
@@ -11,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar cartCount={cartCount} />
-      <main className="container">
+      <main className="mx-auto max-w-6xl px-4 py-6 pb-16">
         <Routes>
           <Route path="/" element={<CatalogPage onAdd={addToCart} />} />
           <Route

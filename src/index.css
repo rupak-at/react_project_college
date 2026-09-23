@@ -1,16 +1,5 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@import "tailwindcss";
 
 body {
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  background: #f4f4f6;
-  color: #1a1a2e;
-}
-
-img {
-  max-width: 100%;
-  display: block;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }

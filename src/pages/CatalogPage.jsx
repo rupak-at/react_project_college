@@ -37,7 +37,7 @@ function CatalogPage({ onAdd }) {
 
   return (
     <section>
-      <h1 className="page-title">Products</h1>
+      <h1 className="mb-5 text-2xl font-bold text-gray-900">Products</h1>
       <FilterBar
         search={search}
         category={category}
