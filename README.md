@@ -5,6 +5,8 @@ product catalog, search and filter items, sort them, and manage a shopping cart 
 sessions. It demonstrates core React concepts: components, props, state, hooks, routing, and
 conditional/list rendering.
 
+**Live demo:** https://react-project-college.vercel.app/
+
 ## Features
 
 - Product catalog with mock data (16 products across Electronics, Clothing, and Accessories)
