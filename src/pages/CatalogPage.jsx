@@ -38,23 +38,37 @@ function CatalogPage({ onAdd }) {
 
   return (
     <section>
-      <h1 className="mb-5 text-2xl font-bold text-gray-900">Products</h1>
+      <header className="mb-8 text-center sm:text-left">
+        <h1 className="text-[34px] font-semibold leading-tight tracking-tight text-[#1d1d1f] md:text-[40px]">
+          Products
+        </h1>
+        <p className="mt-1 text-[15px] tracking-tight text-neutral-500">
+          A few essentials, carefully chosen.
+        </p>
+      </header>
+
       <FilterBar
         search={search}
         category={category}
         sort={sort}
         onSearchChange={(e) => setSearch(e.target.value)}
-        onCategoryChange={(e) => setCategory(e.target.value)}
+        onCategoryChange={setCategory}
         onSortChange={(e) => setSort(e.target.value)}
       />
+
       {filteredProducts.length > 0 ? (
-        <ProductGrid
-          products={filteredProducts}
-          onAdd={(product) => {
-            onAdd(product)
-            toast.success(`${product.name} added to cart`)
-          }}
-        />
+        <>
+          <p className="mb-4 text-right text-[12px] font-medium tracking-wide text-neutral-400">
+            {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}
+          </p>
+          <ProductGrid
+            products={filteredProducts}
+            onAdd={(product) => {
+              onAdd(product)
+              toast.success(`${product.name} added to cart`)
+            }}
+          />
+        </>
       ) : (
         <EmptyState
           emoji="🔍"

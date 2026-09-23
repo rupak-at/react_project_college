@@ -1,18 +1,20 @@
 function CartSummary({ count, total, onCheckout }) {
   return (
-    <aside className="self-start rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-      <h3 className="mb-3 text-lg font-bold text-gray-900">Order Summary</h3>
-      <p className="flex justify-between">
-        <span className="text-gray-600">Items</span>
-        <span className="font-medium">{count}</span>
+    <aside className="h-fit rounded-3xl border border-black/5 bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] lg:sticky lg:top-24">
+      <h3 className="text-lg font-semibold tracking-tight text-[#1d1d1f]">Order Summary</h3>
+      <p className="mt-4 flex items-center justify-between text-[14px]">
+        <span className="text-neutral-500">Items</span>
+        <span className="font-medium text-[#1d1d1f]">{count}</span>
       </p>
-      <p className="mb-4 mt-3 flex justify-between border-t border-gray-200 pt-3 text-lg font-bold">
-        <span>Total</span>
-        <span>${total.toFixed(2)}</span>
+      <p className="mt-2 flex items-end justify-between border-t border-black/5 pt-4">
+        <span className="text-[14px] text-neutral-500">Total</span>
+        <span className="text-2xl font-semibold tracking-tight text-[#1d1d1f]">
+          Rs. {total.toFixed(2)}
+        </span>
       </p>
       <button
         type="button"
-        className="w-full rounded-lg bg-blue-600 py-2.5 font-semibold text-white transition hover:bg-blue-700"
+        className="mt-6 w-full rounded-full bg-[#1d1d1f] py-3 text-[15px] font-medium text-white transition hover:bg-black/80 active:scale-[0.98]"
         onClick={onCheckout}
       >
         Checkout

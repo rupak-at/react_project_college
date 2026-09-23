@@ -2,18 +2,20 @@ function ProductCard({ product, onAdd }) {
   const { name, price, category, emoji } = product
 
   return (
-    <article className="flex flex-col gap-2 rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-      <div className="flex h-32 items-center justify-center rounded-lg bg-gradient-to-br from-blue-100 to-indigo-50 text-5xl">
+    <article className="group flex flex-col rounded-3xl border border-black/5 bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
+      <div className="mb-4 flex h-32 items-center justify-center rounded-2xl bg-gradient-to-br from-neutral-100 via-neutral-50 to-[#fbfbfd] text-5xl transition-transform duration-300 group-hover:scale-[1.04]">
         {emoji}
       </div>
-      <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+      <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-400">
         {category}
       </span>
-      <h3 className="text-base font-medium text-gray-900">{name}</h3>
-      <div className="mt-auto flex items-center justify-between">
-        <span className="text-lg font-bold text-gray-900">${price.toFixed(2)}</span>
+      <h3 className="mt-1.5 text-[15px] font-medium tracking-tight text-[#1d1d1f]">{name}</h3>
+      <div className="mt-auto flex items-center justify-between pt-4">
+        <span className="text-[16px] font-semibold tracking-tight text-[#1d1d1f]">
+          Rs. {price.toFixed(2)}
+        </span>
         <button
-          className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
+          className="rounded-full bg-[#1d1d1f] px-5 py-2 text-[13px] font-medium text-white transition hover:bg-black/80 active:scale-95"
           onClick={() => onAdd(product)}
         >
           Add

@@ -7,7 +7,7 @@ import CartSummary from '../components/CartSummary'
 import EmptyState from '../components/EmptyState'
 
 const actionBtnClass =
-  'inline-block rounded-lg bg-blue-600 px-5 py-2.5 font-semibold text-white transition hover:bg-blue-700'
+  'rounded-full bg-[#1d1d1f] px-6 py-2.5 text-[14px] font-medium text-white transition hover:bg-black/80 active:scale-95'
 
 function CartPage({ cart, changeQuantity, removeFromCart, clearCart }) {
   const [orderPlaced, setOrderPlaced] = useState(false)
@@ -39,7 +39,7 @@ function CartPage({ cart, changeQuantity, removeFromCart, clearCart }) {
       <EmptyState
         emoji="🎉"
         title="Order placed"
-        message={`Thanks for shopping! Your order of $${total.toFixed(2)} is confirmed.`}
+        message={`Thanks for shopping! Your order of Rs. {total.toFixed(2)} is confirmed.`}
         action={
           <Link to="/" className={actionBtnClass}>
             Continue shopping
@@ -65,10 +65,15 @@ function CartPage({ cart, changeQuantity, removeFromCart, clearCart }) {
   }
 
   return (
-    <section className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+    <section className="grid grid-cols-1 gap-8 lg:grid-cols-3">
       <div className="lg:col-span-2">
-        <h1 className="mb-5 text-2xl font-bold text-gray-900">Your Cart</h1>
-        <ul className="flex flex-col gap-3">
+        <h1 className="mb-2 text-[34px] font-semibold leading-tight tracking-tight text-[#1d1d1f] md:text-[40px]">
+          Your Cart
+        </h1>
+        <p className="mb-6 text-[15px] tracking-tight text-neutral-500">
+          {count} {count === 1 ? 'item' : 'items'} ready for checkout.
+        </p>
+        <ul className="flex flex-col gap-3.5">
           {cartItems.map((item) => (
             <CartItem
               key={item.id}
