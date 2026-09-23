@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import useLocalStorage from './useLocalStorage'
 
 function useCart() {
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useLocalStorage('shopcart.cart', [])
 
   const addToCart = (product) => {
     setCart((prev) => {
