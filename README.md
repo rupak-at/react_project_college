@@ -50,21 +50,15 @@ npm run preview # preview the production build
 
 ## Screenshots
 
-> Add 2–3 screenshots of the running app below, e.g.:
->
-> 1. Catalog page (desktop) with products, search bar, and category filter
-> 2. Cart page with quantity controls and order summary
-> 3. Catalog on a mobile/narrow viewport
-
-**1. Catalog view**
+**1. Catalog view (desktop)** — products with search, category filter, and sorting
 
 ![Screenshot of the product catalog](screenshots/catalog.png)
 
-**2. Cart view**
+**2. Cart view (desktop)** — items with quantity controls, running total, and order summary
 
 ![Screenshot of the cart page](screenshots/cart.png)
 
-**3. Mobile view**
+**3. Catalog view (mobile)** — responsive two-column layout on a narrow viewport
 
 ![Screenshot on a narrow viewport](screenshots/mobile.png)
 
