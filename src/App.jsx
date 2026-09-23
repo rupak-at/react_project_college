@@ -2,10 +2,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import useCart from './hooks/useCart'
 import CatalogPage from './pages/CatalogPage'
-import EmptyState from './components/EmptyState'
+import CartPage from './pages/CartPage'
 
 function App() {
-  const { addToCart, cartCount } = useCart()
+  const { cart, addToCart, changeQuantity, removeFromCart, clearCart, cartCount } = useCart()
 
   return (
     <BrowserRouter>
@@ -15,7 +15,14 @@ function App() {
           <Route path="/" element={<CatalogPage onAdd={addToCart} />} />
           <Route
             path="/cart"
-            element={<EmptyState emoji="🛒" title="Your cart is empty" message="Browse the catalog and add some items." />}
+            element={
+              <CartPage
+                cart={cart}
+                changeQuantity={changeQuantity}
+                removeFromCart={removeFromCart}
+                clearCart={clearCart}
+              />
+            }
           />
         </Routes>
       </main>
